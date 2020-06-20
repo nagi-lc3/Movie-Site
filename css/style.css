@@ -1,0 +1,442 @@
+@charset "UTF-8";
+
+@import url("reset-min.css"); /* ------- Reset all CSS Styles */
+* {
+	box-sizing: border-box;
+}
+body {
+	font-size: 16px;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    background-image: url(../images/background.png);
+	/* タイル状に繰り返し表示しない */
+	background-repeat: repeat;
+	/* 天地左右の中央に配置 */
+	background-position: center center;
+	/* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+	background-attachment: fixed;
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	background-size: cover;
+	/* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #171A0F;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* ヘッダー */
+header{
+    display: flex;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    height: 97px;
+    background-color: #000;
+}
+a{
+    text-decoration: none;
+
+}
+.navigation_wrapper{
+    margin: 0 auto;
+}
+.logo{
+    width: 284px;
+    height: 97px;
+    padding: 20px 0;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+}
+li{
+    height: 97px;
+}
+ul li a{
+    margin-left: 46.5px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 97px;
+    transition: all 0.3s ease 0s;
+}
+ul li a:hover{
+    color: #b10c1b;
+    text-decoration: underline;
+}
+h1{
+    height: 97px;
+}
+li h1 a{
+    display: inline-block;
+    height: 97px;
+    padding: 0;
+    margin-left: 0;
+}
+
+
+/* メインビジュアル */
+.title{
+    text-align: center;
+}
+h2{
+    height: 235px;
+    margin: 142px 0 45px 0;
+}
+.main_image{
+    position: relative;
+    z-index: 1;
+    width: 1080px;
+    margin: 0 auto;
+    margin-top: 97px;
+    margin-bottom: 45px;
+    cursor: default;
+}
+.main_image img{
+    vertical-align: bottom;
+}
+
+
+/* メインビジュアルの上にある文字 */
+.main_font01{
+    position: absolute;
+    z-index: 2;
+    top: 30px;
+    left: 980px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+.main_font02{
+    position: absolute;
+    z-index: 2;
+    top: 30px;
+    left: 900px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+.main_font03{
+    position: absolute;
+    z-index: 2;
+    top: 430px;
+    left: 30px;
+}
+.main_font04{
+    position: absolute;
+    z-index: 2;
+    left: 30px;
+}
+.main_font02 .text_combine01{
+    color: #b10c1b;
+    text-combine-upright: all;
+}
+.main_font02 .text_combine02{
+    color: #000;
+    text-combine-upright: all;
+}
+.main_font01 p{
+    color: #000;
+    font-family: serif;
+    font-size: 50px;
+    text-shadow: white 1px 1px 2px, teal 0 0 20px;
+}
+.main_font02 p{
+    color: #000;
+    font-family: serif;
+    font-size: 50px;
+    text-shadow: white 1px 1px 2px, teal 0 0 20px;
+}
+.main_font03 img{
+    width: 50%;
+    height: 50%;
+}
+.main_font04 p{
+    color: #000;
+    font-family: serif;
+    font-size: 40px;
+    text-shadow: white 1px 1px 2px, teal 0 0 20px;
+}
+
+
+/* 文字を浮かび上がらせるアニメーション(HOME) */
+.main_font01 p{
+    opacity: 0;
+    animation: fadeIn01 3s ease 0.5s 1 forwards;
+}
+@keyframes  fadeIn01{
+    100% {
+    opacity: 1;
+    }
+}
+.main_font02 p{
+    opacity: 0;
+    animation: fadeIn02 3s ease 2s 1 forwards;
+}
+@keyframes fadeIn02 {
+    100% {
+    opacity: 1;
+    }
+}
+.main_font03 p, .main_font04 p{
+    opacity: 0;
+    animation: fadeIn03 3s ease 3s 1 forwards;
+}
+@keyframes fadeIn03 {
+    100% {
+    opacity: 1;
+    }
+}
+
+/* 文字を浮かび上がらせるアニメーション(STORY) */
+.center p:nth-child(2){
+    opacity: 0;
+    animation: fadeIn02 3s ease 0.5s 1 forwards;
+}
+@keyframes fadeIn02 {
+    100% {
+    opacity: 1;
+    }
+}
+.center p:nth-child(3){
+    opacity: 0;
+    animation: fadeIn03 3s ease 1s 1 forwards;
+}
+@keyframes fadeIn03 {
+    100% {
+    opacity: 1;
+    }
+}
+.center p:nth-child(4){
+    opacity: 0;
+    animation: fadeIn04 3s ease 1.5s 1 forwards;
+}
+@keyframes  fadeIn04{
+    100% {
+    opacity: 1;
+    }
+}
+.center p:nth-child(5){
+    opacity: 0;
+    animation: fadeIn05 3s ease 2.5s 1 forwards;
+}
+@keyframes fadeIn05 {
+    100% {
+    opacity: 1;
+    }
+}
+.center p:nth-child(6){
+    opacity: 0;
+    animation: fadeIn06 3s ease 4s 1 forwards;
+}
+@keyframes fadeIn06 {
+    100% {
+    opacity: 1;
+    }
+}
+
+/* メインコンテンツ */
+.text_wrapper{
+    position: relative;
+    width: 1080px;
+    margin: 0 auto;
+    margin-bottom: 45px;
+    background-color: rgba(31, 48, 65, 0.6);
+}
+.text_wrapper img{
+    float: left;
+    width: 300px;
+    height: 424px;
+    margin: 45px 0 45px 45px;
+    cursor: pointer;
+}
+.text_area{
+    clear: both;
+    width: 100%;
+}
+h3{
+    margin: 0 45px 45px 45px;
+    font-size: 3em;
+    text-shadow: white 1px 1px 2px, teal 0 0 20px;
+    text-decoration: underline;
+}
+.text_area p{
+    margin: 0 45px;
+    color: #fff;
+}
+.text_area img{
+    margin: 0 45px 15px 0;
+    width: 455px;
+    height: 277px;
+    cursor: default;
+}
+.text_area .center {
+    text-align: center;
+}
+.text_area .center p{
+    margin-bottom: 5px;
+    margin-right: 30px;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 45px;
+}
+.mist{
+    color: rgb(112, 109, 109);
+    font-size: 30px;
+}
+.horror{
+    color: #000;
+    font-size: 35px;
+    text-shadow: white 1px 1px 2px, teal 0 0 20px;
+}
+.catchcopy{
+    color: rgb(112, 109, 109);
+    font-size: 42px;
+    text-shadow: #000 1px 1px 2px,  #b10c1b 0 0 20px
+}
+.center p:nth-child(5){
+    margin-top: 25px;
+}
+.center p:nth-child(6){
+    margin-top: 30px;
+}
+.video{
+    clear: both;
+}
+.video iframe{
+    margin: 45px;
+    margin-top: 0;
+    vertical-align: bottom;
+}
+.staff_wrapper{
+    display: inline-block;
+    width: 400px;
+    margin-right: 40px;
+}
+.cast_wrapper{
+    display: inline-block;
+    margin-left: 40px;
+}
+.gap{
+    margin: 45px 100px;
+    font-size: 0;
+}
+.gap h3{
+    font-size: 48px;
+}
+.gap dl{
+    color: white;
+    font-size: 16px;
+}
+dt{
+    margin-bottom: 10px;
+    color: #82909A;
+    letter-spacing: .5em;
+}
+dd{
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+
+/* 背景動画 */
+.mainVisual {
+    overflow: hidden;
+}
+.mainVisual video {
+    position: absolute;
+    z-index: -1;
+    top: 15%;
+    left: 0;
+    width: 1280px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/* フッター */
+footer{
+     margin-top: auto;
+    background-color: #fff;
+    text-align: center;
+}
+.icon{
+    margin: 15px 0;
+    height: 30px;
+}
+.icon img{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+.icon img:hover{
+    opacity: 0.8;
+}
+.facebook{
+    height: 20px;
+}
+.copyright{
+    margin: 15px 0;
+}
+
+
+/* TOPアイコン */
+.up{
+    position: fixed;
+	width: 65px;
+	height: 65px;
+	right: 25px;
+	bottom: 25px;
+}
+.up:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+/* モーダルCSS */
+.modalArea01, .modalArea02, .modalArea03, .modalArea04, .modalArea05, .modalArea06{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modalBg01, .modalBg02, .modalBg03, .modalBg04, .modalBg05, .modalBg06{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30,30,30,0.9);
+}
+
+.modalWrapper01, .modalWrapper02, .modalWrapper03, .modalWrapper04, .modalWrapper05, .modalWrapper06{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 1080px;
+    padding: 30px;
+    background-color: #fff;
+    opacity: 0.6;
+    transform:translate(-50%,-50%);
+}
+.modalWrapper01 .modalContents01 img, .modalWrapper02 .modalContents02 img, .modalWrapper03 .modalContents03 img, .modalWrapper04 .modalContents04 img, .modalWrapper05 .modalContents05 img, .modalWrapper06 .modalContents06 img{
+    float: left;
+    width: 263px;
+    height: 408px;
+    margin: 0 30px 0 0;
+}
+
+.closeModal01, .closeModal02, .closeModal03, .closeModal04, .closeModal05, .closeModal06{
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    cursor: pointer;
+}
+.closeModal01, .closeModal02, .closeModal03, .closeModal04, .closeModal05, .closeModal06{
+    clear: both;
+}
+.modalContents01 p, .modalContents02 p, .modalContents03 p, .modalContents04 p, .modalContents05 p, .modalContents06 p{
+    font-weight: bold;
+    line-height: 30px;
+}
